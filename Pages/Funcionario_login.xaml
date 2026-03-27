@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GerentProjeto.Pages.funcionario_login"
+             BackgroundColor="#D9D9D9"
+             BackgroundImageSource="cinza.png">
+
+
+
+    <Grid ColumnDefinitions="2*,*,2*">
+
+      
+        <Grid Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" Margin="80,0,0,0">
+            <Frame
+                BackgroundColor="#3a89c9"
+                CornerRadius="15"
+                Padding="35"
+                HasShadow="False"
+                WidthRequest="400"
+                HeightRequest="450"
+                VerticalOptions="Center"
+                HorizontalOptions="Start" >
+
+                <VerticalStackLayout Spacing="50">
+
+                    <Label
+                        Text="Entrar como funcionário"
+                        FontSize="18"
+                        TextColor="White"
+                        HorizontalOptions="Center" />
+
+                    <Entry 
+                        x:Name="userEntry"
+                        Placeholder="Usuário"
+                        BackgroundColor="#636161"
+                        TextColor="White"
+                        PlaceholderColor="#CCCCCC"
+                        HeightRequest="45" />
+
+                    <Entry
+                        x:Name="senhaEntry"
+                        Placeholder="*********"
+                        IsPassword="True"
+                        BackgroundColor="#636161"
+                        TextColor="White"
+                        PlaceholderColor="#CCCCCC"
+                        HeightRequest="45" />
+
+                    <Button 
+                        x:Name="Login_Funcionario"
+                        Text="Login  ➜"
+                        BackgroundColor="#595959"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        HeightRequest="45"
+                        Clicked="OnLoginClicked" />
+
+                    <Label
+                        x:Name="mensagemLabel"
+                        Text=""
+                        TextColor="Red"
+                        IsVisible="False"
+                        FontSize="12"
+                        HorizontalOptions="Center" />
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+
+    
+        <Grid 
+            Grid.Column="2"
+            RowDefinitions="Auto,Auto"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Padding="20"
+            Margin="0,0,0,0"
+            RowSpacing="25">
+
+            <Frame 
+                Grid.Row="0"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                HasShadow="False"
+                Padding="20"
+                Margin="-150, 40, 250, 0">
+
+                <VerticalStackLayout
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Spacing="15">
+
+                    <Label
+                        Text="Atenção !!"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        HorizontalOptions="Center" />
+                    <Label
+                        Text="Seu usuário e senha são pessoais e intransferíveis."
+                        FontSize="20"
+                        TextColor="Black"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Center" />
+
+                </VerticalStackLayout>
+            </Frame>
+
+
+            <Frame 
+                Grid.Row="1"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                HasShadow="False"
+                Padding="20"
+                Margin="-120,150,120,0">
+
+                <VerticalStackLayout
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    Spacing="15">
+
+                    <Label
+                        Text="Cuidado"
+                        FontSize="22"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        HorizontalOptions="Center" />
+
+                    <Label
+                        Text="Todas as ações no sistema são registradas e vinculadas ao seu login. Em caso de dúvidas, procure o administrador."
+                        FontSize="20"
+                        TextColor="Black"
+                        HorizontalTextAlignment="Center"
+                        HorizontalOptions="Center" />
+
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </Grid>
+</ContentPage>

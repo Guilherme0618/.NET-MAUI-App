@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GerentProjeto.Pages.Func_Gerente.Gerente_Adicionar_login" 
+             BackgroundColor="Transparent"
+             BackgroundImageSource="a2.png">
+
+    <Grid RowDefinitions="Auto,*" ColumnDefinitions="Auto,*" Padding="20">
+  
+        <Button Text="⬅️ Voltar"
+                BackgroundColor="#8C8C8C"
+                TextColor="White"
+                WidthRequest="100"
+                HeightRequest="50"
+                Margin="0,0,0,10"
+                Clicked="OnVoltarClicked"
+                Grid.Row="0"
+                Grid.Column="0">
+            <Button.Triggers>
+                <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                    <Setter Property="BackgroundColor" Value="#555"/>
+                    <Setter Property="TextColor" Value="LightGray"/>
+                </Trigger>
+            </Button.Triggers>
+        </Button>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" ColumnDefinitions="Auto,*" ColumnSpacing="20">
+            <VerticalStackLayout Grid.Column="0" Spacing="15" WidthRequest="300">
+                <Label 
+                    Text="Atenção à Segurança de Dados"
+                    FontSize="24"
+                    TextColor="Black"
+                    HorizontalOptions="Start" 
+                    Margin="130,120,-250,0"/>
+                <Label 
+                    Text="Evite o vazamento de informações pessoais. Utilize senhas fortes, ative a autenticação de dois fatores e nunca compartilhe dados sensíveis em redes públicas ou com pessoas não autorizadas."
+                    FontSize="20"
+                    TextColor="Black"
+                    HorizontalOptions="Start"
+                    LineBreakMode="WordWrap" 
+                    Margin="100,35,-300,0"/>
+            </VerticalStackLayout>
+
+            <Frame 
+                Grid.Column="1"
+                Padding="20"
+                BorderColor="Gray"
+                CornerRadius="10"
+                BackgroundColor="White"
+                VerticalOptions="Start"
+                WidthRequest="400"
+                Margin="450,0,0,0">
+
+                <VerticalStackLayout Spacing="15">
+                    <Label 
+                        Text="Adicionar Login"
+                        FontSize="24"
+                        HorizontalOptions="Center" 
+                        TextColor="Black"/>
+
+           
+                    <Border Stroke="Black" StrokeThickness="1" StrokeShape="RoundRectangle 5" Padding="0">
+                        <Entry 
+                            x:Name="NomeEntry"
+                            Placeholder="Nome"
+                            FontSize="16" 
+                            TextColor="Black"
+                            BackgroundColor="White"/>
+                    </Border>
+
+                 
+                    <Border Stroke="Black" StrokeThickness="1" StrokeShape="RoundRectangle 5" Padding="0">
+                        <Entry 
+                            x:Name="EmailEntry"
+                            Placeholder="Email"
+                            Keyboard="Email"
+                            FontSize="16" 
+                            TextColor="Black"
+                            BackgroundColor="White"/>
+                    </Border>
+
+                  
+                    <Border Stroke="Black" StrokeThickness="1" StrokeShape="RoundRectangle 5" Padding="0">
+                        <Entry 
+                            x:Name="CpfEntry"
+                            Placeholder="CPF"
+                            Keyboard="Numeric"
+                            FontSize="16"
+                            TextColor="Black"
+                            BackgroundColor="White"/>
+                    </Border>
+
+                    
+                    <Border Stroke="Black" StrokeThickness="1" StrokeShape="RoundRectangle 5" Padding="0">
+                        <Entry 
+                            x:Name="SenhaEntry"
+                            Placeholder="Senha"
+                            IsPassword="True"
+                            FontSize="16" 
+                            TextColor="Black"
+                            BackgroundColor="White"/>
+                    </Border>
+
+                   
+                    <StackLayout>
+                        <Label Text="Selecione a função:"  FontSize="Medium" TextColor="Black" />
+
+                        <RadioButton
+                            x:Name="FuncionarioRadioButton"
+                            Content="Funcionário"
+                            GroupName="Funcao"
+                            Value="Funcionario"
+                            CheckedChanged="OnFuncaoCheckedChanged"
+                            TextColor="Black" />
+
+                        <RadioButton
+                            x:Name="GerenteRadioButton"
+                            Content="Gerente"
+                            GroupName="Funcao"
+                            Value="Gerente"
+                            CheckedChanged="OnFuncaoCheckedChanged"
+                            TextColor="Black" />
+                    </StackLayout>
+
+                    <Button Text="Cadastrar"
+                            BackgroundColor="#007AFF"
+                            TextColor="White"
+                            Clicked="OnCadastrarClicked" />
+                </VerticalStackLayout>
+            </Frame>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GerentProjeto.Pages.Func_Funcionario.Funcionario_Anotacao" 
+             BackgroundImageSource="a1.png">
+
+    <VerticalStackLayout Padding="15" Spacing="20">
+
+       
+        <HorizontalStackLayout Spacing="100">
+            <Button 
+                Text="⬅️ Voltar" 
+                BackgroundColor="#3a89c9" 
+                TextColor="White" 
+                WidthRequest="140" 
+                Clicked="OnVoltarClicked">
+                <Button.Triggers>
+                    <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                        <Setter Property="BackgroundColor" Value="#555"/>
+                        <Setter Property="TextColor" Value="LightGray"/>
+                    </Trigger>
+                </Button.Triggers>
+            </Button>
+        </HorizontalStackLayout>
+
+ 
+        <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Always" >
+            <HorizontalStackLayout Spacing="150" Margin="50,0,0,0">
+
+                <Frame
+                    WidthRequest="300"
+                    HeightRequest="550"
+                    CornerRadius="15"
+                    BorderColor="Gray"
+                    BackgroundColor="#f9f9f9"
+                    Padding="15"
+                    HasShadow="True">
+
+                    <VerticalStackLayout Spacing="5">
+
+                        <Entry 
+                            Text="Título 1"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="Black" />
+
+                        <Editor 
+                            Placeholder="Anotação 1"
+                            AutoSize="TextChanges"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            FontSize="14"
+                            HeightRequest="550"/>
+
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame
+                    WidthRequest="300"
+                    HeightRequest="550"
+                    CornerRadius="15"
+                    BorderColor="Gray"
+                    BackgroundColor="#f9f9f9"
+                    Padding="15"
+                    HasShadow="True">
+
+                    <VerticalStackLayout Spacing="10">
+
+                        <Entry 
+                            Text="Título 2"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="Black" />
+
+                        <Editor 
+                            Placeholder="Anotação 2"
+                            AutoSize="TextChanges"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            FontSize="14"
+                            HeightRequest="550"/>
+
+                    </VerticalStackLayout>
+                </Frame>
+
+                <Frame
+                    WidthRequest="300"
+                    HeightRequest="550"
+                    CornerRadius="15"
+                    BorderColor="Gray"
+                    BackgroundColor="#f9f9f9"
+                    Padding="15"
+                    HasShadow="True">
+
+                    <VerticalStackLayout Spacing="10">
+
+                        <Entry 
+                            Text="Título 3"
+                            FontSize="18"
+                            FontAttributes="Bold"
+                            TextColor="Black" />
+
+                        <Editor 
+                            Placeholder="Anotação 3"
+                            AutoSize="TextChanges"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            FontSize="14"
+                            HeightRequest="550"/>
+
+                    </VerticalStackLayout>
+                </Frame>
+
+            </HorizontalStackLayout>
+        </ScrollView>
+
+    </VerticalStackLayout>
+</ContentPage>

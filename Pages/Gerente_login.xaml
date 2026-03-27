@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GerentProjeto.Pages.gerent_login"
+             BackgroundColor="#D9D9D9"
+             BackgroundImageSource="azul.png">
+
+    <Grid ColumnDefinitions="*,2*">
+
+    
+        <Frame 
+            Grid.Column="0"
+            BackgroundColor="Transparent"
+            BorderColor="Transparent"
+            CornerRadius="30"
+            HasShadow="False"
+            Padding="20"
+            Margin="380, -240, -350 , 0"
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand">
+
+            <VerticalStackLayout
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Spacing="15">
+
+                <Label 
+                    Text="Aviso Importante"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    HorizontalOptions="Center" />
+
+                <Label 
+                    Text="Uma boa relação entre o administrador e o funcionário representa um pilar fundamental para o sucesso de qualquer organização."
+                    FontSize="20"
+                    TextColor="Black"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </Frame>
+        <Grid>
+            <Frame
+                Margin="40, 350, -10, 0"
+                Padding="20"
+                CornerRadius="15"
+                BackgroundColor="Transparent"
+                BorderColor="Transparent"
+                VerticalOptions="Center"
+                HorizontalOptions="FillAndExpand">  
+
+                <VerticalStackLayout Spacing="15">
+                    <Label 
+                        Text="A Essência de um Bom Gerenciamento"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        TextColor="Black"
+                        HorizontalOptions="Center" />
+
+                    <Label
+                        Text="Um bom gerenciamento vai além de supervisionar tarefas. Ele exige visão estratégica, inteligência emocional e um compromisso contínuo com a melhoria de processos e pessoas."
+                        FontSize="18"
+                        TextColor="Black"
+                        HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
+            </Frame>
+    </Grid>
+
+ 
+            <Grid Grid.Column="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+                <Frame 
+                    BackgroundColor="#757575"
+                    CornerRadius="15"
+                    Padding="35"
+                    HasShadow="False"
+                    WidthRequest="400"
+                    HeightRequest="450"
+                    HorizontalOptions="End"
+                    Margin="0,0,80,0"
+                    VerticalOptions="Center">
+
+                    <VerticalStackLayout Spacing="50">
+
+                        <Label 
+                            Text="Entrar como gerente"
+                            FontSize="18"
+                            TextColor="White"
+                            HorizontalOptions="Center" />
+
+                        <Entry 
+                            x:Name="userEntry"
+                            Placeholder="Usuário"
+                            BackgroundColor="#636161"
+                            TextColor="White"
+                            PlaceholderColor="#CCCCCC"
+                            HeightRequest="45" />
+
+                        <Entry 
+                            x:Name="senhaEntry"
+                            Placeholder="*********"
+                            IsPassword="True"
+                            BackgroundColor="#636161"
+                            TextColor="White"
+                            PlaceholderColor="#CCCCCC"
+                            HeightRequest="45" />
+
+                        <Button 
+                            Text="Login  ➜"
+                            BackgroundColor="#3a89c9"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            HeightRequest="45"
+                            Padding="0, 0, 0, 0"
+                            Clicked="OnLoginClicked"/>
+
+                        <Label 
+                            x:Name="mensagemLabel"
+                            Text=""
+                            TextColor="Red"
+                            IsVisible="False"
+                            FontSize="12"
+                            HorizontalOptions="Center" />
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+        </Grid>
+</ContentPage>

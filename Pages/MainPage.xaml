@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GerentProjeto.Pages.MainPage"
+             BackgroundColor="#e3dde3"
+             BackgroundImageSource="plano_fundo.png"
+             NavigationPage.HasBackButton="True"
+             NavigationPage.HasNavigationBar="True">
+
+
+    <Grid RowDefinitions="Auto, Auto, Auto, Auto" ColumnDefinitions="*" Padding="0, 120, 0, 0">
+
+        <Label
+            x:Name="lblDica"
+            Text="Dicas para possuir um gerenciamento adequado:"
+            Style="{StaticResource SubHeadline}"
+            SemanticProperties.HeadingLevel="Level1"
+            TextColor="Black"
+            Grid.Row="0"
+            HorizontalOptions="Center"/>
+
+        <Frame
+            BackgroundColor="#CC8C8C8C"  
+            BorderColor="Transparent"
+            CornerRadius="10"
+            Padding="0"
+            HasShadow="False"
+            Grid.Row="1"
+            Margin="220,150,220,10">
+
+            <Label
+                x:Name="lbl_inicio_1"
+                Text=" ● Defina papéis e responsabilidades com clareza para evitar confusões."
+                Style="{StaticResource SubHeadline}"
+                TextColor="Black" />
+        </Frame>
+
+
+        <Frame
+            BackgroundColor="#CC3A89C9"
+            BorderColor="Transparent"
+            CornerRadius="10"
+            Padding="0"
+            HasShadow="False"
+            Grid.Row="2"
+            Margin="250,40,250,20">
+
+            <Label
+                x:Name="lbl_inicio_2"
+                Text=" ● Incentive a capacitação e o crescimento profissional da equipe."
+                Style="{StaticResource SubHeadline}"
+                TextColor="Black" />
+        </Frame>
+
+
+    </Grid>
+
+</ContentPage>

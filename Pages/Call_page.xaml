@@ -1,0 +1,51 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GerentProjeto.Pages.Call_page" 
+             BackgroundColor="#e3dde3"
+             BackgroundImageSource="plano_fundo.png">
+
+    <Grid RowDefinitions="*,Auto">
+
+        <Frame
+            Grid.Row="0"
+            BackgroundColor="Transparent"
+            BorderColor="Transparent"
+            CornerRadius="30"
+            HasShadow="False"
+            Margin="0,-150,0,0">
+
+            <VerticalStackLayout
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Spacing="15">
+
+                <Label 
+                    Text="Aviso Importante"
+                    FontSize="24"
+                    FontAttributes="Bold"
+                    TextColor="Black"
+                    HorizontalOptions="Center" />
+
+                <Label 
+                    Text="Uma boa relação entre o administrador e o funcionário representa um pilar fundamental para o sucesso de qualquer organização."
+                    FontSize="20"
+                    TextColor="Black"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </Frame>
+
+        
+        <VerticalStackLayout
+            Grid.Row="1"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            Margin="0,-550,0,0">
+            
+            <Button
+                Text="Chamar Gerente"
+                Clicked="OnCallClicked"
+                BackgroundColor="#3a89c9"/>
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

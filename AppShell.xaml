@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="GerentProjeto.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:GerentProjeto"
+    xmlns:pages="clr-namespace:GerentProjeto.Pages"
+    Shell.FlyoutBehavior="Locked"
+    Title="Software de Gerencia"
+    Shell.FlyoutBackgroundColor="#404040"
+    Shell.FlyoutWidth="70"
+    BackgroundColor="#e3dde3"
+    TitleColor="Black">
+
+    <ShellContent
+        ContentTemplate="{DataTemplate pages:MainPage}"
+        Route="MainPage"
+        Icon="home.png" />
+
+
+    <MenuItem 
+        IconImageSource="pontos.png"
+        IsEnabled="False" />
+    
+
+    <ShellContent
+       ContentTemplate="{DataTemplate pages:funcionario_login}"
+       Route="funcionario_login"
+       Icon="user.png" />
+
+
+
+    <ShellContent
+        ContentTemplate="{DataTemplate pages:gerent_login}"
+        Route="gerente_login"
+        Icon="gerentes_png.png" />
+
+    <MenuItem 
+        IconImageSource="pontos.png"
+        IsEnabled="False" />
+
+    <ShellContent
+        ContentTemplate="{DataTemplate pages:Call_page}"
+        Route="Call_page"
+        Icon="phone_ring.png" />
+
+    <Shell.FlyoutFooter>
+        <Grid BackgroundColor="#404040" Padding="10">
+            <Button
+            Text="Sair"
+            TextColor="White"
+            Clicked="OnExitClicked"
+            BackgroundColor="Transparent"
+            ImageSource="exit.png"
+            HorizontalOptions="Center">
+                <Button.Triggers>
+                    <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                        <Setter Property="BackgroundColor" Value="#555"/>
+                        <Setter Property="TextColor" Value="LightGray"/>
+                    </Trigger>
+                </Button.Triggers>
+            </Button>
+        </Grid>
+    </Shell.FlyoutFooter>
+
+
+</Shell>

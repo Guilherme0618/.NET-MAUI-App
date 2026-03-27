@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GerentProjeto.Pages.Func_Funcionario.Funcionario_Horas"
+             BackgroundImageSource="a1.png">
+
+    <Grid ColumnDefinitions="Auto,*" RowDefinitions="*">
+        <Frame 
+            Grid.Column="0"
+            Padding="15"
+            Margin="100,50,50,0"
+            BorderColor="Gray"
+            CornerRadius="10"
+            BackgroundColor="Gray"
+            VerticalOptions="Start"
+            WidthRequest="400"
+            HeightRequest="600">
+            <VerticalStackLayout Spacing="10" HorizontalOptions="Center">
+                <Image Source="usuario_joao.png"
+                   WidthRequest="130"
+                   HeightRequest="130"
+                   Aspect="AspectFill"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   Clip="EllipseGeometry Center='50,50' RadiusX='50' RadiusY='50'" 
+                   Margin="0,20,0,90"/>
+                <Label Text="Nome: João Silva" FontAttributes="Bold" FontSize="Medium" Margin="0,10,0,0"/>
+                <Label Text="Email: joao.silva@gmail.com" FontSize="Small" Margin="0,10,0,0" />
+                <Label Text="CPF: 123.456.789-00" FontSize="Small" Margin="0,10,0,0" />
+                <Label Text="Função: Funcionario" FontSize="Small" Margin="0,10,0,0" />
+            </VerticalStackLayout>
+        </Frame>
+        
+        <ScrollView Grid.Column="1" Padding="20">
+            <VerticalStackLayout Spacing="15">
+
+                <Label x:Name="DataLabel"
+                       Text=""
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       FontSize="Medium"
+                       HorizontalOptions="Center" />
+
+
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                    <Button
+                        Text="⬅️ Voltar Para tela Inicial" 
+                        BackgroundColor="#3a89c9" 
+                        TextColor="Black" 
+                        WidthRequest="200"
+                        HeightRequest="10"
+                        Margin="-280,0,0,0"
+                        Clicked="OnVoltarClicked">
+                        <Button.Triggers>
+                            <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                                <Setter Property="BackgroundColor" Value="#555"/>
+                                <Setter Property="TextColor" Value="Black"/>
+                            </Trigger>
+                        </Button.Triggers>
+                    </Button>
+                    <Button x:Name="BtnIniciar" Text="Iniciar" Clicked="OnIniciarClicked" Margin="60,0,0,0"/>
+                    <Button x:Name="BtnParar" Text="Parar" Clicked="OnPararClicked" IsEnabled="False" />
+                </HorizontalStackLayout>
+
+           
+                <Label x:Name="TempoDecorridoLabel"
+                       Text="Tempo decorrido: 00:00:00"
+                       TextColor="Black"
+                       FontAttributes="Bold"
+                       FontSize="Medium"
+                       HorizontalOptions="Center" />
+
+            
+                <ScrollView HeightRequest="500">
+                    <VerticalStackLayout x:Name="PontosContainer" Spacing="10" />
+                </ScrollView>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

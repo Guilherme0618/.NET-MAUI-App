@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GerentProjeto.Pages.Func_Gerente.Gerente_Projetos"
+             BackgroundColor="Transparent"
+             BackgroundImageSource="a2.png"
+             Padding="20">
+
+    <VerticalStackLayout>
+
+        <!-- Botão Voltar -->
+        <HorizontalStackLayout HorizontalOptions="Start" Margin="0,0,0,20">
+            <Button Text="⬅️ Voltar"
+                    BackgroundColor="#8C8C8C"
+                    TextColor="White"
+                    WidthRequest="100"
+                    HeightRequest="50"
+                    Clicked="OnVoltarClicked" />
+        </HorizontalStackLayout>
+
+        <!-- Botão Criar Projeto -->
+        <Button Text="➕ Criar Projeto"
+                BackgroundColor="#8C8C8C"
+                TextColor="White"
+                HeightRequest="50"
+                Margin="0,0,0,20"
+                Clicked="OnCriarProjetoClicked"/>
+
+        <!-- Lista de Projetos -->
+        <CollectionView ItemsSource="{Binding Projetos}">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical"
+                                 Span="3" />
+            </CollectionView.ItemsLayout>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="#607D8B"
+                           BorderColor="#ccc"
+                           CornerRadius="10"
+                           Padding="10"
+                           Margin="5"
+                           HeightRequest="200">
+                        <StackLayout Spacing="5">
+                            <Label Text="{Binding Nome}" FontAttributes="Bold" FontSize="16" TextColor="White"/>
+                            <Label Text="{Binding Responsavel, StringFormat='Responsável: {0}'}" FontSize="14" TextColor="White"/>
+                            <Label Text="{Binding Duracao, StringFormat='Duração: {0}'}" FontSize="14" TextColor="White"/>
+                            <Label Text="{Binding Resumo, StringFormat='Resumo: {0}'}" FontSize="13" TextColor="White"/>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentPage>

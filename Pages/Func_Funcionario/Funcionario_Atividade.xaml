@@ -1,0 +1,113 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GerentProjeto.Pages.Func_Funcionario.Funcionario_Atividade"
+             BackgroundImageSource="a1.png">
+
+    <Grid ColumnDefinitions="3*,2*" Padding="20">
+
+      
+        <VerticalStackLayout Grid.Column="0">
+
+            <HorizontalStackLayout Margin="15,0,0,20" Spacing="100">
+                <Button 
+                    Text="⬅️ Voltar" 
+                    BackgroundColor="#3a89c9" 
+                    TextColor="White" 
+                    WidthRequest="140" 
+                    Clicked="OnVoltarClicked">
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                            <Setter Property="BackgroundColor" Value="#555"/>
+                            <Setter Property="TextColor" Value="LightGray"/>
+                        </Trigger>
+                    </Button.Triggers>
+                </Button>
+
+                <Button 
+                    Text="Adicionar Atividade" 
+                    Clicked="OnAdicionarAtividadeClicked" 
+                    BackgroundColor="#3a89c9" 
+                    TextColor="White" 
+                    WidthRequest="250" >
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                            <Setter Property="BackgroundColor" Value="#555"/>
+                            <Setter Property="TextColor" Value="LightGray"/>
+                        </Trigger>
+                    </Button.Triggers>
+                </Button>
+            </HorizontalStackLayout>
+
+            <ScrollView>
+                <FlexLayout 
+                    x:Name="AtividadesContainer"
+                    Wrap="Wrap"
+                    Direction="Row"
+                    JustifyContent="Start"
+                    AlignItems="Start"
+                    WidthRequest="800" />
+            </ScrollView>
+
+        </VerticalStackLayout>
+
+      
+        <Frame 
+            Grid.Column="1"
+            x:Name="DescricaoFrame"
+            BorderColor="Gray"
+            CornerRadius="15"
+            Padding="15"
+            Margin="10"
+            BackgroundColor="White"
+            IsVisible="False">
+
+            <VerticalStackLayout Spacing="15">
+
+                <Entry x:Name="NomeEntry" Placeholder="Nome da Atividade" FontSize="16" TextColor="Black" />
+
+                <Editor x:Name="DescricaoEditor"
+                        Placeholder="Descrição da Atividade"
+                        AutoSize="TextChanges"
+                        HeightRequest="350"
+                        FontSize="14"
+                        BackgroundColor="#F0F0F0" 
+                        TextColor="Black"/>
+
+                <HorizontalStackLayout Spacing="10" HorizontalOptions="Center">
+                    <Button x:Name="BtnCorVerde" BackgroundColor="LightGreen" WidthRequest="30" HeightRequest="30" CornerRadius="15" BorderWidth="2" BorderColor="Transparent"/>
+                    <Button x:Name="BtnCorAmarelo" BackgroundColor="LightYellow" WidthRequest="30" HeightRequest="30" CornerRadius="15" BorderWidth="2" BorderColor="Transparent"/>
+                    <Button x:Name="BtnCorVermelho" BackgroundColor="LightCoral" WidthRequest="30" HeightRequest="30" CornerRadius="15" BorderWidth="2" BorderColor="Transparent"/>
+                </HorizontalStackLayout>
+
+                <Button 
+                    x:Name="BtnSalvar" 
+                    Text="Salvar" 
+                    BackgroundColor="#3a89c9" 
+                    TextColor="White" 
+                    Clicked="OnSalvarClicked" >
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                            <Setter Property="BackgroundColor" Value="#555"/>
+                            <Setter Property="TextColor" Value="LightGray"/>
+                        </Trigger>
+                    </Button.Triggers>
+                </Button>
+                
+                <Button 
+                    x:Name="BtnExcluir" 
+                    Text="Excluir Atividade" 
+                    BackgroundColor="#3a89c9" 
+                    TextColor="White" 
+                    Clicked="OnExcluirClicked" >
+                    <Button.Triggers>
+                        <Trigger TargetType="Button" Property="IsPressed" Value="True">
+                            <Setter Property="BackgroundColor" Value="#555"/>
+                            <Setter Property="TextColor" Value="LightGray"/>
+                        </Trigger>
+                    </Button.Triggers>
+                </Button>
+
+            </VerticalStackLayout>
+        </Frame>
+    </Grid>
+</ContentPage>
